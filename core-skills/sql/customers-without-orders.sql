@@ -1,4 +1,4 @@
--- solution 1
+-- solution 1 (JOIN variant)
 SELECT customers.name
 FROM customers
 LEFT JOIN orders
@@ -7,7 +7,7 @@ LEFT JOIN orders
 WHERE orders.customer_id IS NULL;
 
 
--- solution 2
+-- solution 2 (subquery variant)
 SELECT customers.name
 FROM customers
 WHERE customers.id NOT IN (SELECT orders.customer_id FROM orders);
